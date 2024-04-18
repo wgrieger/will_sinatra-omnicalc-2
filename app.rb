@@ -47,9 +47,14 @@ get("/wizard_multiply") do
 end
 
 get("/divide") do
-  erb(:div_form)
+  erb(:divform)
 end
 
 get("/wizard_divide") do
+  @first_num = params.fetch(:first_num).to_f
+  @second_num = params.fetch(:second_num).to_f
+
+  @result=@first_num/@second_num
+
   erb(:div_result)
 end
